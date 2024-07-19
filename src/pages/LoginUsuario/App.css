@@ -1,4 +1,4 @@
-.container-main {
+.container-login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,34 +7,12 @@
   height: 100vh;
 }
 
-.form-container {
-  gap: 15px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 1rem 1rem #0003;
-  background-color: rgb(255, 255, 255);
-  padding: 2rem;
-  border-radius: 1rem;
-
-  .form {
-    margin: 0;
-  }
-}
-
-h1 {
-  font-size: 2.3rem;
-  font-weight: 600;
-  color: #000000;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2rem;
-  color: #000000;
-  margin-bottom: 0.4rem;
+a {
+  text-decoration: none;
+  color: #046ee5;
 }
 
 label {
   font-size: 14px;
-  color: red;
+  color: #ff0000;
 }

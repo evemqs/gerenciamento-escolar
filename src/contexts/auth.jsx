@@ -18,15 +18,15 @@ export const AuthProvider = ({ children }) => {
         }
     },[]);
 
-    const loginUsuario = (cpf, senha) => {
+    const loginUsuario = (cpf, password) => {
         const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
         const hasUser = usersStorage?.filter((user) => user.cpf === cpf);
 
         if (hasUser?.length) {
-            if (hasUser[0].cpf === cpf && hasUser[0].senha === senha) {
+            if (hasUser[0].cpf === cpf && hasUser[0].password === password) {
                 const token = Math.random().toString(36).substring(2);
                 localStorage.setItem("user_token", JSON.stringify({ cpf, token }));
-                setUser ({ cpf, senha });
+                setUser ({ cpf, password });
                 return;
             } else {
                 return "CPF ou senha incorretos!";
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    const cadastroUsuario = (cpf, senha) => {
+    const cadastroUsuario = (cpf, password) => {
         const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
         const hasUser = usersStorage?.filter((user) => user.cpf === cpf);
 
@@ -48,9 +48,9 @@ export const AuthProvider = ({ children }) => {
         let novoUsuario;
 
         if (usersStorage) {
-            novoUsuario = [...usersStorage, { cpf, senha }];
+            novoUsuario = [...usersStorage, { cpf, password }];
         } else {
-            novoUsuario = [{ cpf, senha }];
+            novoUsuario = [{ cpf, password }];
         }
 
         localStorage.setItem("users_bd", JSON.stringify(novoUsuario));

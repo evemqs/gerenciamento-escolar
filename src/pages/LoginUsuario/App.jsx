@@ -12,12 +12,36 @@ const App = () => {
   const [cpf, setCpf] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
+
+  const formatCpf = (value) => {
+    value = value.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+    value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca o primeiro ponto
+    value = value.replace(/(\d{3})(\d)/, "$1.$2"); // Coloca o segundo ponto
+    value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // Coloca o traço
+    return value;
+  };
+
+  const handleCpfChange = (event) => {
+    let newValue = event.target.value;
+    newValue = newValue.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+    
+    // Limitar a 11 caracteres
+    if (newValue.length > 11) {
+      newValue = newValue.substring(0, 11);
+    }
+
+    // Formatar o CPF
+    const formattedValue = formatCpf(newValue);
+    setCpf(formattedValue);
+    setError("");
+  };
   
-  const preencher = () => {
+  const alert = () => {
     if (!cpf || !senha) {
       setError("Preencha todos os campos obrigatórios.")
       return;
     }
+
 
     const res = loginUsuario(cpf, senha);
 
@@ -26,28 +50,27 @@ const App = () => {
       return;
     }
 
-    navigate("/home");
+    navigate("../Home");
   };
 
   return (
-    <section className="container-main">
+    <section className="container-login">
       <div className="form-container">
         <h1>Seja bem vindo!</h1>
         <div className="form">
-          <h2>CPF*</h2>
-          <input type="text" placeholder="Digite seu CPF" value={cpf} onChange={(c) => [setCpf(c.target.value), setError("")]}/>
+          <h2>CPF<span>*</span></h2>
+          <input type="text" placeholder="Digite seu CPF" value={cpf} onChange={handleCpfChange}/>
         </div>
         <div className="form">
-          <h2>Senha*</h2>
-          <input type="password" placeholder="Digite sua senha" value={senha} onChange={(s) => [setSenha(s.target.value), setError("")]}/>
-          <div className="erro">
-          </div>
+          <h2>Senha<span>*</span></h2>
+          <input type="password" placeholder="Digite sua senha" value={senha} onChange={(e) => [setSenha(e.target.value), setError("")]}/>
         </div>
         <label>{error}</label>
-        <button onClick={preencher}>Entrar</button>
+        <button onClick={alert}>Entrar</button>
+        <p>Não possui conta? <Link to="/CadastroUsuario">Cadastre-se!</Link></p>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default App;
