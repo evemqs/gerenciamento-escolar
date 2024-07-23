@@ -1,10 +1,30 @@
 .container-login {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
   height: 100vh;
+}
+
+.form-login {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 1rem 1rem #0003;
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .form {
+    margin: 0;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 a {
@@ -12,7 +32,6 @@ a {
   color: #046ee5;
 }
 
-label {
-  font-size: 14px;
-  color: #ff0000;
+.button-login {
+  background-color: #046ee5;
 }

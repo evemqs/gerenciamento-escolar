@@ -1,0 +1,31 @@
+#container-home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container-home {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1rem 1rem #0003;
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.buttons-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.button-logout {
+  background-color: red;
+  width: 10rem;
+}
+
+.button-home {
+  background-color: #000000;
+}
