@@ -1,11 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+import { Link } from "react-router-dom";
 import "../Home/App.css";
 
 const Home = () => {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
 
   return (
     <section id="container-home">
@@ -15,7 +12,7 @@ const Home = () => {
           <Link to="/CadastroEscola"><button className="button-home">Cadastrar Escola</button></Link>
           <Link to="/CadastroProfessor"><button className="button-home">Cadastrar Professor</button></Link>
           <Link to="/CadastroAluno"><button className="button-home">Cadastrar Aluno</button></Link>
-          <Link to="/"><button className="button-logout" onClick={() => [logout(), navigate("/")]}>Sair</button></Link>
+          <Link to="/"><button className="button-logout">Sair</button></Link>
         </div>
       </div>
     </section>

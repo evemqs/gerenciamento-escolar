@@ -52,34 +52,18 @@ const App = () => {
         <section className="form-escolas">
           <div>
             <h2>Nome<span>*</span></h2>
-            <input
-              type="text"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
+            <input type="text" value={nome} onChange={(e) => setNome(e.target.value)}/>
           </div>
           <div>
             <h2>Endereço<span>*</span></h2>
-            <input
-              type="text"
-              value={endereco}
-              onChange={(e) => setEndereco(e.target.value)}
-            />
+            <input type="text" value={endereco} onChange={(e) => setEndereco(e.target.value)}/>
           </div>
         </section>
         <div className="flex">
-          {error && <label className="error">{error}</label>}
+          <label>{error}</label>
           <div className="buttons-flex">
-            <button
-              className="button-cancel"
-              type="button"
-              onClick={() => navigate(-1)}
-            >
-              Cancelar
-            </button>
-            <button className="button-cadastro" type="submit">
-              Cadastrar
-            </button>
+            <button className="button-cancel" type="button" onClick={() => navigate(-1)}>Voltar</button>
+            <button className="button-cadastro" type="submit">Cadastrar</button>
           </div>
         </div>
       </form>

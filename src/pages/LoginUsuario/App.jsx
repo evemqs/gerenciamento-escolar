@@ -25,9 +25,10 @@ const App = () => {
     }));
     setError("");
   };
+  
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Adiciona preventDefault para evitar o comportamento padrão do formulário
+    e.preventDefault();
 
     const { cpf, senha } = formData;
     if (!cpf || !senha) {
@@ -41,7 +42,7 @@ const App = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/get/users", { // Adiciona http:// ao URL
+      const response = await fetch("http://localhost:3001/get/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +53,6 @@ const App = () => {
       const result = await response.json();
 
       if (response.ok) {
-        // Supondo que o backend retorne um token ou similar
         localStorage.setItem("authToken", result.token);
         navigate("/Home");
       } else {
@@ -77,7 +77,7 @@ const App = () => {
             <input type="password" name="senha" placeholder="Digite sua senha" value={formData.senha} onChange={handleChange}/>
           </div>
           {error && <label className="error-message">{error}</label>}
-          <button className="button-login" type="submit">Entrar</button>
+        <Link to="/Home"><button className="button-login" type="submit">Entrar</button></Link>
         </form>
         <p>Não possui conta? <Link to="/CadastroUsuario">Cadastre-se!</Link></p>
       </div>

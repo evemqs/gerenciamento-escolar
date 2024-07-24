@@ -138,7 +138,7 @@ const App = () => {
           <div className="flex">
             <label>{error}</label>
             <div className="buttons-flex">
-              <button className="button-cancel" onClick={() => navigate(-1)}>Cancelar</button>
+              <button className="button-cancel" onClick={() => navigate(-1)}>Voltar</button>
               <button className="button-cadastro" type="submit">Cadastrar</button>
             </div>
           </div>

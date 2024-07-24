@@ -1,31 +1,6 @@
-#container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.container {
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 1rem 1rem #0003;
-  background-color: rgb(255, 255, 255);
-  padding: 2rem;
-  border-radius: 1rem;
-  width: min-content;
-}
-
 .form-escolas {
   display: flex;
-  gap: 1rem;
-}
-
-.flex {
-  display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
 }
 

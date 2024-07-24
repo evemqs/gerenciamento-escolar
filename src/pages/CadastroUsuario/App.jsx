@@ -70,44 +70,21 @@ const App = () => {
         <form onSubmit={handleSubmit}>
           <div className="form">
             <h2>Nome<span>*</span></h2>
-            <input
-              type="text"
-              name="nome"
-              placeholder="Digite seu nome"
-              value={formData.nome}
-              onChange={handleChange}
-            />
+            <input type="text" name="nome" placeholder="Digite seu nome" value={formData.nome} onChange={handleChange}/>
           </div>
           <div className="form">
             <h2>CPF<span>*</span></h2>
-            <input
-              type="text"
-              name="cpf"
-              placeholder="Digite seu CPF"
-              value={formData.cpf}
-              onChange={handleChange}
-            />
+            <input type="text" name="cpf" placeholder="Digite seu CPF" value={formData.cpf} onChange={handleChange}/>
           </div>
           <div className="form">
             <h2>Data de nascimento<span>*</span></h2>
-            <input
-              type="date"
-              name="data"
-              value={formData.data}
-              onChange={handleChange}
-            />
+            <input type="date" name="data" value={formData.data} onChange={handleChange}/>
           </div>
           <div className="form">
             <h2>Senha<span>*</span></h2>
-            <input
-              type="password"
-              name="senha"
-              placeholder="Digite sua senha"
-              value={formData.senha}
-              onChange={handleChange}
-            />
+            <input type="password" name="senha" placeholder="Digite sua senha" value={formData.senha} onChange={handleChange}/>
           </div>
-          {error && <label className="error-message">{error}</label>}
+          <label>{error}</label>
           <div className="buttons-flex">
             <button className="button-cancel" type="button" onClick={() => navigate(-1)}>Cancelar</button>
             <button className="button-cadastro" type="submit">Cadastrar</button>
